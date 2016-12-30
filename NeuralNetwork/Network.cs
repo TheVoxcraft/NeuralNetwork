@@ -49,7 +49,7 @@ namespace NeuralNetwork
 
             }
 
-            OutputNode.BIAS = fRandom(0, 2, 3);
+            OutputNode.BIAS = fRandom(0, 1, 3);
         }
 
         public static float runNetwork(float INPUT)
@@ -57,7 +57,7 @@ namespace NeuralNetwork
             float OUTPUT = 0;
 
             OUTPUT = INPUT;
-            OUTPUT = OUTPUT * InputNode.BIAS;
+            //OUTPUT = OUTPUT * InputNode.BIAS;
             InputNode.SCORE = OUTPUT;
 
             for (int i = 0; i < HiddenNodes.Length; i++)
@@ -65,17 +65,20 @@ namespace NeuralNetwork
                 HiddenNodes[i].SCORE = OUTPUT;
 
                 HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].INPUT_WEIGHT;
-                HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].OUTPUT_WEIGHT;
-                HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].BIAS;
+                // HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].OUTPUT_WEIGHT;
+                // HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].BIAS;
             }
 
             OUTPUT = 0;
             for (int i = 0; i < HiddenNodes.Length; i++)
             {
-                OUTPUT = OUTPUT + HiddenNodes[i].SCORE;
+                if (HiddenNodes[i].SCORE >= HiddenNodes[i].BIAS) { // uses bias as a threshold
+                    HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].OUTPUT_WEIGHT;
+                    OUTPUT = OUTPUT + HiddenNodes[i].SCORE;
+                }
             }
 
-            OutputNode.SCORE = OUTPUT * OutputNode.BIAS;
+            OutputNode.SCORE = OUTPUT;
 
             return OutputNode.SCORE;
         }
