@@ -1,0 +1,9 @@
+c:\users\thevoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\bin\Debug\NeuralNetwork.exe.config
+c:\users\thevoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.csprojResolveAssemblyReference.cache
+c:\users\thevoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.Form1.resources
+c:\users\thevoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.Properties.Resources.resources
+c:\users\thevoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.csproj.GenerateResource.Cache
+C:\Users\TheVoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\bin\Debug\NeuralNetwork.exe
+C:\Users\TheVoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\bin\Debug\NeuralNetwork.pdb
+C:\Users\TheVoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.exe
+C:\Users\TheVoxcraft\documents\visual studio 2015\Projects\NeuralNetwork\NeuralNetwork\obj\Debug\NeuralNetwork.pdb
