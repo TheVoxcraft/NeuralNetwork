@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -159,6 +159,48 @@ namespace NeuralNetwork
                         }
                     }
                 }
+
+                baseDist = Math.Abs(output - runNetwork(input));
+                InputNode.BIAS = InputNode.BIAS - stepSize; // try minus step
+                newDistminus = Math.Abs(output - runNetwork(input));
+
+                InputNode.BIAS = InputNode.BIAS + (stepSize * 2); // reset and try plus step
+                newDistplus = Math.Abs(output - runNetwork(input));
+
+                if (baseDist < newDistminus && baseDist < newDistplus)
+                {
+                    InputNode.BIAS = InputNode.BIAS - stepSize; // reset
+                }
+                if (newDistminus < newDistplus)
+                {
+                    InputNode.BIAS = InputNode.BIAS - (stepSize * 2); // reset and go minus step
+                }
+                else
+                {
+                    // do nothing and stay plus
+                }
+
+                baseDist = Math.Abs(output - runNetwork(input));
+                OutputNode.BIAS = OutputNode.BIAS - stepSize; // try minus step
+                newDistminus = Math.Abs(output - runNetwork(input));
+
+                OutputNode.BIAS = OutputNode.BIAS + (stepSize * 2); // reset and try plus step
+                newDistplus = Math.Abs(output - runNetwork(input));
+
+                if (baseDist < newDistminus && baseDist < newDistplus)
+                {
+                    OutputNode.BIAS = OutputNode.BIAS - stepSize; // reset
+                }
+                if (newDistminus < newDistplus)
+                {
+                    OutputNode.BIAS = OutputNode.BIAS - (stepSize * 2); // reset and go minus step
+                }
+                else
+                {
+                    // do nothing and stay plus
+                }
+
+
             }
         }
 
