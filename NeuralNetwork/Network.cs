@@ -72,9 +72,9 @@ namespace NeuralNetwork
             OUTPUT = 0;
             for (int i = 0; i < HiddenNodes.Length; i++)
             {
-                if (HiddenNodes[i].SCORE >= HiddenNodes[i].BIAS) { // uses bias as a threshold
+                if (true) { // activation method (to implement)
                     HiddenNodes[i].SCORE = HiddenNodes[i].SCORE * HiddenNodes[i].OUTPUT_WEIGHT;
-                    OUTPUT = OUTPUT + HiddenNodes[i].SCORE;
+                    OUTPUT = OUTPUT + HiddenNodes[i].SCORE + HiddenNodes[i].BIAS;
                 }
             }
 
